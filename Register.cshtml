@@ -1,0 +1,88 @@
+﻿@model User
+
+
+@{
+    Layout = "~/Views/Shared/_LayoutAnonymousUser.cshtml";
+}
+
+@using (Html.BeginForm("CompleteRegistration", "Login", FormMethod.Post))
+{
+
+    <fieldset>
+        <legend>Register</legend>
+
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+        @if (TempData["Message"] != null)
+        {
+            <div style="border: 1px solid red">
+                @TempData["Message"]
+            </div>
+        }
+
+        <table>
+            <tr>
+                <td>ID: </td>
+                <td>@Html.TextBoxFor(a => a.Id)</td>
+            </tr>
+            <tr>
+                <td>First Name: </td>
+                <td>@Html.TextBoxFor(a => a.fname)</td>
+            </tr>
+            <tr>
+                <td>Last Name: </td>
+                <td>@Html.TextBoxFor(a => a.lname)</td>
+            </tr>
+            <tr>
+                <td>Company Name: </td>
+                <td>@Html.TextBoxFor(a => a.companyName)</td>
+            </tr>
+            <tr>
+                <td>Email: </td>
+                <td>@Html.TextBoxFor(a => a.email)</td>
+            </tr>
+            <tr>
+                <td>Phone Number: </td>
+                <td>@Html.TextBoxFor(a => a.phone)</td>
+            </tr>
+            <tr>
+                <td>Zip Code: </td>
+                <td>@Html.TextBoxFor(a => a.zip)</td>
+            </tr>
+            <tr>
+                <td>State: </td>
+                <td>@Html.TextBoxFor(a => a.state)</td>
+            </tr>
+            <tr>
+                <td>City: </td>
+                <td>@Html.TextBoxFor(a => a.city)</td>
+            </tr>
+            <tr>
+                <td>Address Line 1: </td>
+                <td>@Html.TextBoxFor(a => a.address1)</td>
+            </tr>
+            <tr>
+                <td>Address Line 2: </td>
+                <td>@Html.TextBoxFor(a => a.address2)</td>
+            </tr>
+            <tr>
+                <td>Username: </td>
+                <td>@Html.TextBoxFor(a => a.LoginUser)</td>         
+            </tr>
+            <tr>
+                <td> Password:   </td>
+                <td> @Html.PasswordFor(a => a.LoginPass) </td>
+               
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type="submit" value="Register" />
+                </td>
+                <td></td>
+            </tr>
+
+        </table>
+    </fieldset>
+
+}

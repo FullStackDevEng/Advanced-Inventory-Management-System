@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewBag.Title = "Dashboard";
+    Layout = "~/Views/Shared/_Layout_User.cshtml";
+}
+
+<h2>Dashboard</h2>
+
+<div class="navbar navbar-inverse navbar-btn">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li>@Html.ActionLink("Users", "Users", "DashBoard")</li>
+                <li>@Html.ActionLink("Transactions", "Transactions", "DashBoard")</li>
+                <li>@Html.ActionLink("Inventory", "Inventory", "DashBoard")</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+

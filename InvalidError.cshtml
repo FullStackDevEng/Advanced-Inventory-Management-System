@@ -1,0 +1,21 @@
+﻿
+
+@{
+    Layout = "~/Views/Shared/_LayoutAnonymousUser.cshtml";
+}
+
+
+Invalid UserName/Password.
+@using (Html.BeginForm("Index", "Login", FormMethod.Post))
+{
+    <td>
+        <input type="submit" value="Try again" />
+    </td>
+}
+
+@using (Html.BeginForm("Index", "Home", FormMethod.Post))
+{
+    <td>
+        <input type="submit" value="Home" />
+    </td>
+}

@@ -1,0 +1,161 @@
+﻿@model System.Collections.Generic.List< User>
+
+@{
+    ViewBag.Title = "Users";
+    Layout = "~/Views/Shared/_Layout_User.cshtml";
+}
+
+<h2>Users</h2>
+
+
+<body>
+    <table cellpadding="10" cellspacing="0" align="center" border="1" style="align-items:center">
+
+        <tr>
+            <th>
+                ID
+            </th>
+            <td></td>
+            <th>
+                Username
+            </th>
+
+            <td></td>
+
+            <th>
+
+                address1
+
+            </th>
+
+            <td></td>
+            <th>
+
+                address2
+
+            </th>
+            <td></td>
+
+            <th>
+
+                State
+
+            </th>
+
+            <td></td>
+
+            <th>
+
+                City
+
+            </th>
+
+            <td></td>
+
+            <th>
+
+                Zip Code
+
+            </th>
+
+            <td></td>
+
+            <th>
+
+                Phone Number
+
+            </th>
+
+            <td></td>
+
+            <th>
+
+                Email
+            </th>
+
+            <td></td>
+
+            <th>
+
+                First Name
+
+            </th>
+
+            <td></td>
+
+            <th>
+
+                Last Name
+
+            </th>
+            <td></td>
+            <th>
+
+                Company Name
+
+            </th>
+
+        </tr>
+
+        @try
+
+            {
+
+                foreach (var Record in Model)
+
+                {
+
+                <tr>
+
+                    <td>@Record.Id</td>
+
+                    <td></td>
+
+                    <td>@Record.LoginUser</td>
+
+                    <td></td>
+
+                    <td>@Record.address1</td>
+
+                    <td></td>
+
+                    <td>@Record.address2</td>
+
+                    <td></td>
+
+                    <td>@Record.city</td>
+
+                    <td></td>
+
+                    <td>@Record.state</td>
+
+                    <td></td>
+
+                    <td>@Record.zip</td>
+
+                    <td></td>
+
+                    <td>@Record.phone</td>
+
+                    <td></td>
+
+                    <td>@Record.email</td>
+                    <td></td>
+
+                    <td>@Record.fname</td>
+                    <td></td>
+
+                    <td>@Record.lname</td>
+                    <td></td>
+
+                    <td>@Record.companyName</td>
+
+                </tr>
+            }
+
+        }
+
+        catch { }
+
+    </table>
+</body>

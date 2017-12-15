@@ -1,0 +1,149 @@
+﻿@model System.Collections.Generic.List<Item>
+
+@{
+    ViewBag.Title = "Inventory";
+    Layout = "~/Views/Shared/_Layout_User.cshtml";
+}
+
+<h2>Inventory</h2>
+<head>
+    <form action="" method="post" enctype="multipart/form-data">
+
+        <label for="file">Filename:</label>
+        <input type="file" name="file" id="file" />
+
+        <input type="submit" />
+    </form>
+</head>
+<body>
+    <table cellpadding="10" cellspacing="0" align="center" border="1" style="align-items:center">
+
+        <tr>
+            <th>
+                ID
+            </th>
+            <td></td>
+            <th>
+                ownerId
+            </th>
+
+            <td></td>
+
+            <th>
+
+                CurrentState
+
+            </th>
+
+            <td></td>
+            <th>
+
+                Condition
+
+            </th>
+            <td></td>
+
+            <th>
+
+                ForSale
+
+            </th>
+
+            <td></td>
+
+            <th>
+
+                ForRent
+
+            </th>
+
+            <td></td>
+
+            <th>
+
+                ForBorrow
+
+            </th>
+
+            <td></td>
+
+            <th>
+
+                Description
+
+            </th>
+
+            <td></td>
+
+            <th>
+
+                SalePrice
+
+            </th>
+
+            <td></td>
+
+            <th>
+
+                RentPrice
+
+            </th>
+
+        </tr>
+
+        @try
+
+            {
+
+                foreach (var Record in Model)
+
+                {
+
+                <tr>
+
+                    <td>@Record.id.ToString()</td>
+
+                    <td></td>
+
+                    <td>@Record.ownerId</td>
+
+                    <td></td>
+
+                    <td>@Record.CurrentState</td>
+
+                    <td></td>
+
+                    <td>@Record.Condition</td>
+
+                    <td></td>
+
+                    <td>@Record.ForSale</td>
+
+                    <td></td>
+
+                    <td>@Record.ForRent</td>
+
+                    <td></td>
+
+                    <td>@Record.ForBorrow</td>
+
+                    <td></td>
+
+                    <td>@Record.Description</td>
+
+                    <td></td>
+
+                    <td>@Record.SalePrice</td>
+                    <td></td>
+
+                    <td>@Record.RentPrice</td>
+
+                </tr>
+            }
+
+        }
+
+        catch { }
+
+    </table>
+</body>

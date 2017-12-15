@@ -1,0 +1,48 @@
+﻿@model warehouseWeb.User
+
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_LayoutAnonymousUser.cshtml";
+}
+
+<h2>Login</h2>
+
+@using (Html.BeginForm("authenticate", "Login", FormMethod.Post))
+{
+
+    <fieldset>
+
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+        @if (TempData["Message"] != null)
+        {
+            <div style="border: 1px solid red">
+                @TempData["Message"]
+            </div>
+        }
+
+        <table>
+            <tr>
+                <td> Username: </td>
+                <td>@Html.TextBoxFor(a => a.LoginUser)</td>
+                <td>@Html.ValidationMessageFor(a => a.LoginPass)</td>
+            </tr>
+
+            <tr>
+
+                <td>  Password:  </td>
+                <td>  @Html.PasswordFor(a => a.LoginPass) </td>
+                <td>  @Html.ValidationMessageFor(a => a.LoginPass)  </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type="submit" value="Login" />
+                </td>
+                <td></td>
+            </tr>
+
+        </table>
+    </fieldset>
+
+}

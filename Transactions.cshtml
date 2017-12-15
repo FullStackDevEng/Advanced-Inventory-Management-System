@@ -1,0 +1,141 @@
+﻿@model System.Collections.Generic.List < Transaction >
+
+@{
+    ViewBag.Title = "Transactions";
+    Layout = "~/Views/Shared/_Layout_User.cshtml";
+}
+
+<h2>Transactions</h2>
+
+<body>
+    <table cellpadding="10" cellspacing="0" align="center" border="1" style="align-items:center">
+
+        <tr>
+            <th>
+                ID
+            </th>
+            <td></td>
+            <th>
+                Transaction ID
+            </th>
+
+            <td></td>
+
+            <th>
+
+                Type
+
+            </th>
+
+            <td></td>
+            <th>
+
+                Business
+
+            </th>
+            <td></td>
+
+            <th>
+
+                Customer 
+
+            </th>
+
+            <td></td>
+
+            <th>
+
+                State
+
+            </th>
+
+            <td></td>
+
+            <th>
+
+                Date
+
+            </th>
+
+            <td></td>
+
+            <th>
+
+                Requester Notes
+
+            </th>
+
+            <td></td>
+
+            <th>
+
+                Requestee Notes
+
+            </th>
+
+            <td></td>
+
+            <th>
+
+                Admin Notes
+
+            </th>
+
+        </tr>
+
+        @try
+
+            {
+
+                foreach (var Record in Model)
+
+                {
+
+                <tr>
+
+                    <td>@Record.Id</td>
+
+                    <td></td>
+
+                    <td>@Record.TransactionId</td>
+
+                    <td></td>
+
+                    <td>@Record.Type</td>
+
+                    <td></td>
+
+                    <td>@Record.Business</td>
+
+                    <td></td>
+
+                    <td>@Record.Customer</td>
+
+                    <td></td>
+
+                    <td>@Record.State</td>
+
+                    <td></td>
+
+                    <td>@Record.Date</td>
+
+                    <td></td>
+
+                    <td>@Record.RequesterNotes</td>
+
+                    <td></td>
+
+                    <td>@Record.RequesteeNotes</td>
+                    <td></td>
+
+                    <td>@Record.AdminNotes</td>
+
+                </tr>
+            }
+
+        }
+
+        catch { }
+
+    </table>
+</body>
